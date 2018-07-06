@@ -21,6 +21,7 @@ class GamesController extends Controller
         }
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -38,9 +39,17 @@ class GamesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {  
+    
+         if (\Auth::check()) {
+            return view('games.store');
+        }
+        else {
+            return redirect('welcome');  
+        }
     }
+
+    
 
     /**
      * Display the specified resource.
@@ -48,10 +57,11 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+   
     public function show()
     {
         if (\Auth::check()) {
-            return view('games.show');
+            return view ('games.show');
         }
         else {
             return redirect('welcome');  
@@ -80,16 +90,16 @@ class GamesController extends Controller
     public function update(Request $request, $id)
     {
         //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    }
+    
+    public function result()
     {
-        //
+        if (\Auth::check()) {
+            return view ('games.result');
+        }
+        else {
+            return redirect('welcome');  
+        }
     }
 }

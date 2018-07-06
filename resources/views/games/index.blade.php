@@ -4,7 +4,7 @@
     <div class = "game_index">
             <h1>gameを選ぶ！！</h1>
             <div>
-              <a href="{{ route('login') }}"><img src="{{ secure_asset("css/images/qa.jpg") }}" alt=""></a>
+              <a href="{{ route('game.show') }}"><img src="{{ secure_asset("css/images/qa.jpg") }}" alt=""></a>
               
               
                 
