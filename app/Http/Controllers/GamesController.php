@@ -14,7 +14,7 @@ class GamesController extends Controller
     public function index()
     {
         if (\Auth::check()) {
-            return view ('games.index');
+            return view('games.index');
         }
         else {
             return redirect('welcome');  
@@ -48,9 +48,15 @@ class GamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        if (\Auth::check()) {
+            return view('games.show');
+        }
+        else {
+            return redirect('welcome');  
+        }
+        
     }
 
     /**

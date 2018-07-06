@@ -3,7 +3,13 @@
 @section('content')
     <div class = "game_index">
             <h1>gameを選ぶ！！</h1>
-            <div></div>
+            <div>
+              <a href="{{ route('login') }}"><img src="{{ secure_asset("css/images/qa.jpg") }}" alt=""></a>
+              
+              
+                
+                
+            </div>
             <a href="" class="btn btn-default btn-ghost btn-lg game_start">Gameをはじめる</a>
     </div>
     

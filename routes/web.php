@@ -25,9 +25,12 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::resource('seats', 'SeatsController',['only'=> ['index']]);
 
 Route::group(['middleware' => ['auth']], function () {
-     Route::group(['prefix' => 'seats/{id}'], function () {
+     Route::group(['prefix' => 'seats/{id}'], function (){
         Route::get('offence', 'SeatsController@show')->name('offence');
      });
 });
 
-Route::get('games', 'GamesController@index')->name('game.index');
+Route::resource('games', 'GamesController');
+
+//Route::get('games', 'GamesController@index');
+//Route::get('games', 'GamesController@show');
